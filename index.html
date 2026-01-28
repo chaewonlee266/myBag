@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hello world</title>
+    <title>What's in my bag?</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;           
+        }
+        body{
+            background-color: #E5E3B9;
+            margin: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        #cover{
+        z-index:-1;
+        position: fixed;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 80vw;
+
+        pointer-events: none;
+        }
+        #cover img{
+            width: 100%;
+            display: block;
+        }
+
+        .spacer{
+            height: 100vh;
+        }
+
+        .grid-section{
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        
+
+        .grid{
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100vw;
+            inset: 0;
+            margin: auto;
+
+        background-color: #9bb5b9;
+        }
+        .grid img{
+            width: 100%;
+            margin: 0 auto;
+            object-fit: contain;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <h1>hello world</h1>
+
+ <div id="cover">
+    <img src="bag.webp" alt="myBag">
+ </div>
+
+ <section class="spacer"></section>
+
+
+<section class="grid-section">
+    <div class="grid">
+        <img id="airpod" src="inbag/airpods.webp" alt="music">
+        <img src="inbag/cap.webp" alt="cap">
+        <img id="bracelet" src="inbag/bracelet.webp" alt="braacelet">
+        <img src="inbag/hairclaw.webp" alt="">
+        <img src="inbag/phone.webp" alt="">
+        <img src="inbag/id.webp" alt="">
+        <img id="lelabo" src="inbag/handcream.webp" alt="scent">
+    </div>
+</section>
+
 </body>
 </html>
