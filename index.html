@@ -44,6 +44,7 @@
             justify-content: center;
             align-items: center;
             display: flex;
+            background-color: #9bb5b9;
         }
         
 
@@ -51,17 +52,31 @@
             z-index: 10;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            width: 100vw;
-            inset: 0;
+            width: 60vw;
             margin: auto;
+            gap: clamp(2px, 5vw, 100px);
 
-        background-color: #9bb5b9;
         }
         .grid img{
             width: 100%;
             margin: 0 auto;
             object-fit: contain;
             display: block;
+        }
+        #card{
+            outline: 2px solid #56878F;
+            border-radius: 4px;
+        }
+        #phone{
+            outline: 2px solid #56878F;
+            border-radius: 4px;            
+        }
+        #lelabo{
+            outline: 3px dotted #56878F;
+            
+        }
+        #airpod{
+            outline: 3px dotted #56878F;
         }
     </style>
 </head>
@@ -80,8 +95,8 @@
         <img src="inbag/cap.webp" alt="cap">
         <img id="bracelet" src="inbag/bracelet.webp" alt="braacelet">
         <img src="inbag/hairclaw.webp" alt="">
-        <img src="inbag/phone.webp" alt="">
-        <img src="inbag/id.webp" alt="">
+        <img id="phone" src="inbag/phone.webp" alt="">
+        <img id="card" src="inbag/id.webp" alt="">
         <img id="lelabo" src="inbag/handcream.webp" alt="scent">
     </div>
 </section>
