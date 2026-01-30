@@ -39,21 +39,42 @@
             height: 100vh;
         }
 
-        .grid-original{
+        .grid-section{
             min-height: 100vh;
             justify-content: center;
             align-items: center;
             display: flex;
             background-color: #9bb5b9;
+            z-index: 10;
         }
-        
+        .grid-align{
+            position: relative;
+            width: 60vw;
+            margin: 5vw;            
+        }
 
-        .grid{
+        .gridY{
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: 10;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            width: 60vw;
-            margin: 5vw;
+            gap: clamp(2px, 5vw, 100px);
+            pointer-events: none;
+        }
+        .gridY img{
+            width: 100%;
+            margin: 0 auto;
+            object-fit: contain;
+            display: block;
+
+        }
+        
+        .grid{
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: clamp(2px, 5vw, 100px);
 
         }
@@ -63,6 +84,8 @@
             object-fit: contain;
             display: block;
         }
+        
+
         #card{
             outline: 2px solid #56878F;
             border-radius: 4px;
@@ -89,16 +112,28 @@
  <section class="spacer"></section>
 
 
-<section class="grid-orginal">
-    <div class="grid">
-        <img id="airpods" src="inbag/airpods.webp" alt="music">
-        <img id="cap" src="inbag/cap.webp" alt="cap">
-        <img id="bracelet" src="inbag/bracelet.webp" alt="braacelet">
-        <img id="hairclaw" src="inbag/hairclaw.webp" alt="">
-        <img id="phone" src="inbag/phone.webp" alt="">
-        <img id="card" src="inbag/id.webp" alt="">
-        <img id="handcream" src="inbag/handcream.webp" alt="scent">
-    </div>
+<section class="grid-section">
+    <div class="grid-align"> 
+        <div class="grid" id="baseGrid">
+            <img id="airpods" src="inbag/airpods.webp" alt="music">
+            <img id="cap" src="inbag/cap.webp" alt="cap">
+            <img id="bracelet" src="inbag/bracelet.webp" alt="braacelet">
+            <img id="hairclaw" src="inbag/hairclaw.webp" alt="">
+            <img id="phone" src="inbag/phone.webp" alt="">
+            <img id="card" src="inbag/id.webp" alt="">
+            <img id="handcream" src="inbag/handcream.webp" alt="scent">
+        </div>
+
+        <div class="gridY" id="overlayGrid">
+            <img id="airpods" src="inbag/airpods1.webp" alt="music">
+            <img id="cap" src="inbag/cap1.webp" alt="cap">
+            <img id="bracelet" src="inbag/bracelet1.webp" alt="braacelet">
+            <img id="hairclaw" src="inbag/hairclaw1.webp" alt="">
+            <img id="phone" src="inbag/phone1.webp" alt="">
+            <img id="card" src="inbag/id1.webp" alt="">
+            <img id="handcream" src="inbag/handcream1.webp" alt="scent">
+        </div>
+    </div>   
 </section>
 
 <script>
