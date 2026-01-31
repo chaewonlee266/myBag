@@ -68,11 +68,10 @@
             margin: 0 auto;
             object-fit: contain;
             display: block;
-
+            opacity: 0;
         }
         
         .grid{
-
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: clamp(2px, 5vw, 100px);
@@ -101,6 +100,11 @@
         #airpods{
             outline: 3px dotted #56878F;
         }
+
+        #airpods1.show{
+            opacity: 1;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -125,19 +129,27 @@
         </div>
 
         <div class="gridY" id="overlayGrid">
-            <img id="airpods" src="inbag/airpods1.webp" alt="music">
-            <img id="cap" src="inbag/cap1.webp" alt="cap">
-            <img id="bracelet" src="inbag/bracelet1.webp" alt="braacelet">
-            <img id="hairclaw" src="inbag/hairclaw1.webp" alt="">
-            <img id="phone" src="inbag/phone1.webp" alt="">
-            <img id="card" src="inbag/id1.webp" alt="">
-            <img id="handcream" src="inbag/handcream1.webp" alt="scent">
+            <img id="airpods1" src="inbag/airpods1.webp" alt="music">
+            <img id="cap1" src="inbag/cap1.webp" alt="cap">
+            <img id="bracelet1" src="inbag/bracelet1.webp" alt="braacelet">
+            <img id="hairclaw1" src="inbag/hairclaw1.webp" alt="">
+            <img id="phone1" src="inbag/phone1.webp" alt="">
+            <img id="card1" src="inbag/id1.webp" alt="">
+            <img id="handcream1" src="inbag/handcream1.webp" alt="scent">
         </div>
     </div>   
 </section>
 
 <script>
-    
+    const airpods =document.querySelector("#airpods")
+
+airpods.addEventListener("mouseenter", function(){
+  airpods1.classList.add("show");
+})
+airpods.addEventListener("mouseleave", function(){
+  airpods1.classList.remove("show");
+})
+
 </script>
 
 </body>
