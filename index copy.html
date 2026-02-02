@@ -47,7 +47,7 @@
             background-color: #9bb5b9;
             z-index: 10;
         }
-        .grid-align{
+        .alignment{
             position: relative;
             width: 60vw;
             margin: 5vw;            
@@ -147,6 +147,21 @@
     z-index: 1001;
 }
 
+.phone-panel{
+            display: none;
+            width: 80vw;
+            height: 80vh;
+            background-color: #E5E3B9;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+
+            z-index: 100;
+        }
+
     </style>
 </head>
 <body>
@@ -159,7 +174,7 @@
 
 
 <section class="grid-section">
-    <div class="grid-align"> 
+    <div class="alignment"> 
         <div class="grid" id="baseGrid">
             <img id="airpods" src="inbag/airpods.webp" alt="music">
             <img id="cap" src="inbag/cap.webp" alt="cap">
@@ -173,23 +188,31 @@
         <div class="gridY" id="overlayGrid">
             <img id="airpods1" src="inbag/airpods1.webp" alt="music">
             <img id="cap1" src="inbag/cap1.webp" alt="cap">
-            <img id="bracelet1" src="inbag/bracelet1.webp" alt="braacelet">
+            <img id="bracelet1" src="inbag/bracelet1.webp" alt="bracelet">
             <img id="hairclaw1" src="inbag/hairclaw1.webp" alt="">
             <img id="phone1" src="inbag/phone1.webp" alt="">
             <img id="card1" src="inbag/id1.webp" alt="">
             <img id="handcream1" src="inbag/handcream1.webp" alt="scent">
         </div>
 
-    <section>
+
     <div class="airpods-panel" id="airpodsPnl">
         <img src="inbag/airpods.webp" alt="Airpods">
         <div class="airpods-panel-content">
-            <button class="airpodsClose" id="closeButton">x</button>
+            <button class="airpodsClose" id="closeButton">X</button>
             <h2>Airpods</h2>
             <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">Listen to my playlist</a></p>
         </div>
     </div>
-    </section>
+
+      <div class="phone-panel" id="phonePnl">
+        <img src="inbag/phone.webp" alt="phone">
+        <div class="phone-panel-content">
+            <button class="phoneClose" id="closeButton">X</button>
+            <h2>Contact</h2>
+            <p>email: clee37@risd.edu <br>instagram: chaewon_266</p>
+        </div>
+    </div>  
 
     </div>  
 </section>
