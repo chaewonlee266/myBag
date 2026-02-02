@@ -85,7 +85,14 @@
         }
         
 
-        #card{
+        #airpods1.show{
+            opacity: 1;
+            display: block;
+        }
+
+
+
+                #card{
             outline: 2px solid #56878F;
             border-radius: 4px;
         }
@@ -100,11 +107,12 @@
         #airpods{
             outline: 3px dotted #56878F;
         }
-
-        #airpods1.show{
-            opacity: 1;
-            display: block;
+        #airpods-panel-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 70vw;
         }
+
     </style>
 </head>
 <body>
@@ -137,7 +145,19 @@
             <img id="card1" src="inbag/id1.webp" alt="">
             <img id="handcream1" src="inbag/handcream1.webp" alt="scent">
         </div>
-    </div>   
+    </div>  
+
+
+    <section>
+    <div class="airpods-panel-content">
+        <img src="inbag/airpods.webp" alt="Airpods">
+        <div>
+            <h2>Airpods</h2>
+            <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">Listen to my playlist</a></p>
+        </div>
+    </div>
+    </section>
+
 </section>
 
 <script>
