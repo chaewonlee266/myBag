@@ -92,7 +92,7 @@
 
 
 
-                #card{
+        #card{
             outline: 2px solid #56878F;
             border-radius: 4px;
         }
@@ -107,11 +107,45 @@
         #airpods{
             outline: 3px dotted #56878F;
         }
-        #airpods-panel-content{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            width: 70vw;
+
+        .airpods-panel{
+            display: none;
+ 
+            width: 80vw;
+            height: 80vh;
+            background-color: #E5E3B9;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+
+            z-index: 100;
         }
+        .airpods-panel img{
+            grid-column: 1 /2;
+            display: block;
+            width: 70%;            
+        }
+        .airpods-panel .airpods-panel-content{
+            grid-column: 2/3;
+
+        }
+        .airpods-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .airpodsClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #56878F;
+    z-index: 1001;
+}
 
     </style>
 </head>
@@ -145,30 +179,40 @@
             <img id="card1" src="inbag/id1.webp" alt="">
             <img id="handcream1" src="inbag/handcream1.webp" alt="scent">
         </div>
-    </div>  
-
 
     <section>
-    <div class="airpods-panel-content">
+    <div class="airpods-panel" id="airpodsPnl">
         <img src="inbag/airpods.webp" alt="Airpods">
-        <div>
+        <div class="airpods-panel-content">
+            <button class="airpodsClose" id="closeButton">x</button>
             <h2>Airpods</h2>
             <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">Listen to my playlist</a></p>
         </div>
     </div>
     </section>
 
+    </div>  
 </section>
 
 <script>
-    const airpods =document.querySelector("#airpods")
+    const airpods =document.querySelector("#airpods");
+    const airpods1 =document.querySelector("#airpods1");
+    const airpodsPnl=document.querySelector("#airpodsPnl");
+    const airpodsClose=document.querySelector(".airpodsClose");
 
 airpods.addEventListener("mouseenter", function(){
   airpods1.classList.add("show");
-})
+});
 airpods.addEventListener("mouseleave", function(){
   airpods1.classList.remove("show");
-})
+});
+airpods.addEventListener("click", function(){
+    airpodsPnl.classList.add("show");
+});
+airpodsClose.addEventListener("click", function(){
+  airpodsPnl.classList.remove("show");
+});
+
 
 </script>
 
