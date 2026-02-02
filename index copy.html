@@ -89,7 +89,18 @@
             opacity: 1;
             display: block;
         }
-
+        #phone1.show{
+            opacity: 1;
+            display: block;
+        }        
+        #card1.show{
+            opacity: 1;
+            display: block;
+        } 
+        #handcream1.show{
+            opacity: 1;
+            display: block;
+        }         
 
 
         #card{
@@ -128,7 +139,7 @@
             display: block;
             width: 70%;            
         }
-        .airpods-panel .airpods-panel-content{
+        .airpods-panel .airpods-content{
             grid-column: 2/3;
 
         }
@@ -138,16 +149,16 @@
           grid-template-columns: 1fr 1fr;
         }
         .airpodsClose {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #56878F;
-    z-index: 1001;
-}
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
+        }
 
-.phone-panel{
+        .phone-panel{
             display: none;
             width: 80vw;
             height: 80vh;
@@ -160,6 +171,105 @@
             border-radius: 10px;
 
             z-index: 100;
+        }
+        .phone-panel img{
+            grid-column: 1 /2;
+            display: block;
+            width: 70%;            
+        }
+        .phone-panel .phone-content{
+            grid-column: 2/3;
+
+        }
+        .phone-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .phoneClose {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
+        }
+        
+        .card-panel{
+            display: none;
+            width: 80vw;
+            height: 80vh;
+            background-color: #E5E3B9;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+
+            z-index: 100;
+        }
+        .card-panel img{
+            grid-column: 1 /2;
+            display: block;
+            width: 70%;            
+        }
+        .card-panel .id-content{
+            grid-column: 2/3;
+
+        }
+        .card-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .cardClose {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
+        }
+
+        .handcream-panel{
+            display: none;
+            width: 80vw;
+            height: 80vh;
+            background-color: #E5E3B9;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+
+            z-index: 100;
+        }
+        .handcream-panel img{
+            grid-column: 1 /2;
+            display: block;
+            width: 70%;            
+        }
+        .handcream-panel .id-content{
+            grid-column: 2/3;
+
+        }
+        .handcream-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .handcreamClose {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
         }
 
     </style>
@@ -198,22 +308,39 @@
 
     <div class="airpods-panel" id="airpodsPnl">
         <img src="inbag/airpods.webp" alt="Airpods">
-        <div class="airpods-panel-content">
-            <button class="airpodsClose" id="closeButton">X</button>
+        <div class="airpods-content">
+            <button class="airpodsClose">X</button>
             <h2>Airpods</h2>
             <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">Listen to my playlist</a></p>
         </div>
     </div>
 
-      <div class="phone-panel" id="phonePnl">
+    <div class="phone-panel" id="phonePnl">
         <img src="inbag/phone.webp" alt="phone">
-        <div class="phone-panel-content">
-            <button class="phoneClose" id="closeButton">X</button>
+        <div class="phone-content">
+            <button class="phoneClose">X</button>
             <h2>Contact</h2>
             <p>email: clee37@risd.edu <br>instagram: chaewon_266</p>
         </div>
     </div>  
 
+    <div class="card-panel" id="cardPnl">
+        <img src="inbag/id.webp" alt="ID">
+        <div class="card-content">
+            <button class="cardClose">X</button>
+            <h2>About</h2>
+            <p>Chaewon Lee <br> RISD class of 29 <br>Born 2006 in Seoul, South Korea <br>Providence, Rhode Island and Palo Alto, California </p>
+        </div>
+    </div>     
+
+    <div class="handcream-panel" id="handcreamPnl">
+        <img src="inbag/handcream.webp" alt="hand cream">
+        <div class="handcream-content">
+            <button class="handcreamClose">X</button>
+            <h2>Hand Cream</h2>
+            <p>Le Labo: Rose 31 <br> top: grass rose, cumin <br>middle: rose, cedar, vetiver <br>base: musk, oud, guaiac </p>
+        </div>
+    </div>      
     </div>  
 </section>
 
@@ -222,7 +349,6 @@
     const airpods1 =document.querySelector("#airpods1");
     const airpodsPnl=document.querySelector("#airpodsPnl");
     const airpodsClose=document.querySelector(".airpodsClose");
-
 airpods.addEventListener("mouseenter", function(){
   airpods1.classList.add("show");
 });
@@ -236,7 +362,56 @@ airpodsClose.addEventListener("click", function(){
   airpodsPnl.classList.remove("show");
 });
 
+    const phone=document.querySelector("#phone");
+    const phone1 =document.querySelector("#phone1");
+    const phonePnl=document.querySelector("#phonePnl");
+    const phoneClose=document.querySelector(".phoneClose");
+phone.addEventListener("mouseenter", function(){
+  phone1.classList.add("show");
+});
+phone.addEventListener("mouseleave", function(){
+  phone1.classList.remove("show");
+});
+phone.addEventListener("click", function(){
+    phonePnl.classList.add("show");
+});
+phoneClose.addEventListener("click", function(){
+  phonePnl.classList.remove("show");
+});
 
+    const card=document.querySelector("#card");
+    const card1 =document.querySelector("#card1");
+    const cardPnl=document.querySelector("#cardPnl");
+    const cardClose=document.querySelector(".cardClose");
+card.addEventListener("mouseenter", function(){
+  card1.classList.add("show");
+});
+card.addEventListener("mouseleave", function(){
+  card1.classList.remove("show");
+});
+card.addEventListener("click", function(){
+    cardPnl.classList.add("show");
+});
+cardClose.addEventListener("click", function(){
+  cardPnl.classList.remove("show");
+});
+
+    const handcream=document.querySelector("#handcream");
+    const handcream1 =document.querySelector("#handcream1");
+    const handcreamPnl=document.querySelector("#handcreamPnl");
+    const handcreamClose=document.querySelector(".handcreamClose");
+handcream.addEventListener("mouseenter", function(){
+  handcream1.classList.add("show");
+});
+handcream.addEventListener("mouseleave", function(){
+  handcream1.classList.remove("show");
+});
+handcream.addEventListener("click", function(){
+    handcreamPnl.classList.add("show");
+});
+handcreamClose.addEventListener("click", function(){
+  handcreamPnl.classList.remove("show");
+});
 </script>
 
 </body>
