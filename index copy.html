@@ -30,7 +30,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 90vw;
+        width: 80vw;
 
         pointer-events: none;
         }
@@ -235,31 +235,51 @@
         }
         .airpods-content, .phone-content, .card-content, .handcream-content {
         grid-column: 2 / 3;
-        align-self: center; /* 텍스트를 세로 중앙으로 */
-        padding: 20px;
+        align-self: left; /* 텍스트를 세로 중앙으로 */
+        padding: 10px;
         }
 
         .title{
             z-index: 2;
-            top: 50%;
+            top: 75%;
             left: 50%;
             transform: translate(-50%, -50%);
             max-width: 70vw;
             display: flex;
             align-items: center;
             position: absolute;
-            font-size: clamp(2rem, 8vw, 10rem);
+            font-size: clamp(2rem, 6vw, 10rem);
             pointer-events: none;
+            color: #56878F;
         }
 
         h2{
-   font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <medium>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100; 
-    color:#56878F;          
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <bold>;
+        font-style: normal;
+        font-variation-settings:
+        "wdth" 100; 
+            color:#56878F;
+            font-size: clamp(2rem, 4vw, 10rem);                
+        }
+        p{
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <medium>;
+        font-style: normal;
+        font-variation-settings:
+        "wdth" 100;   
+            font-size: clamp(1rem, 2vw, 10rem);                   
+        }
+        button{
+            font-size: clamp(2rem, 3vw, 10rem);
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <bold>;
+        font-style: normal;
+        font-variation-settings:
+        "wdth" 100;
         }
 
     </style>
@@ -267,8 +287,8 @@
 <body>
 
  <div id="cover">
-    <img src="bag.webp" alt="myBag">
-    <p class="title">What's in <br> my bag?</p>
+    <img src="myBag.webp" alt="myBag">
+    <p class="title">v</p>
  </div>
 
  <section class="spacer"></section>
@@ -302,7 +322,8 @@
         <div class="airpods-content">
             <button class="airpodsClose">X</button>
             <h2>Airpods</h2>
-            <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">Listen to my playlist</a></p>
+            <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">
+                Listen to my playlist</a></p>
         </div>
     </div>
 
