@@ -51,11 +51,16 @@
             display: flex;
             background-color: #9bb5b9;
             z-index: 10;
+            width: 100%;
         }
         .alignment{
             position: relative;
-            width: 60vw;
-            margin: 5vw;            
+            width: 100%;
+            max-width: 1000px;
+            padding: 5vw auto; 
+            margin: 5vw ;
+            display: flex;
+            align-items: center;           
         }
 
         .gridY{
@@ -67,6 +72,8 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: clamp(2px, 5vw, 100px);
             pointer-events: none;
+
+                width: 100;
         }
         .gridY img{
             width: 100%;
@@ -81,6 +88,7 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: clamp(2px, 5vw, 100px);
 
+            width: 100;
         }
         .grid img{
             width: 100%;
