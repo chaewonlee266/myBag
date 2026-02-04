@@ -105,10 +105,14 @@
         #handcream1.show{
             opacity: 1;
             display: block;
+        }
+        #perfume1.show{
+            opacity: 1;
+            display: block;
         }         
 
 
-        .airpods-panel, .phone-panel, .card-panel, .handcream-panel{
+        .airpods-panel, .phone-panel, .card-panel, .handcream-panel, .perfume-panel{
             display: none;
  
             width: 80vw;
@@ -120,7 +124,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 10px;
-            box-shadow: 0px 20px 20px rgba(0,0,0,.4);
+            box-shadow: 0px 0px 20px rgba(0,0,0,.4);
 
             z-index: 100;
         }
@@ -184,7 +188,22 @@
          z-index: 1001;
         }
 
-        .airpods-panel img, .phone-panel img, .card-panel img, .handcream-panel img{
+        .perfume-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .perfumeClose {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
+        }        
+
+        .airpods-panel img, .phone-panel img, .card-panel img, .handcream-panel img, .perfume-panel img{
         grid-column: 1 / 2;
         width: 70%;
         justify-self: center;
@@ -192,7 +211,7 @@
         object-fit: contain;
 
         }
-        .airpods-content, .phone-content, .card-content, .handcream-content {
+        .airpods-content, .phone-content, .card-content, .handcream-content, .perfume-content{
         grid-column: 2 / 3;
         align-self: left; /* 텍스트를 세로 중앙으로 */
         padding: 10px;
@@ -259,7 +278,9 @@
             <img id="hairclaw" src="inbag/hairclaw.webp" alt="">
             <img id="phone" src="inbag/phone.webp" alt="">
             <img id="card" src="inbag/id.webp" alt="">
-            <img id="handcream" src="inbag/handcream.webp" alt="scent">
+            <img id="handcream" src="inbag/handcream.webp" alt="hanf cream">
+            <img id="hairtie" src="inbag/hairtie.webp" alt="">
+            <img id="perfume" src="inbag/perfume.webp" alt="perfume">
         </div>
 
         <div class="gridY" id="overlayGrid">
@@ -269,7 +290,9 @@
             <img id="hairclaw1" src="inbag/hairclaw1.webp" alt="">
             <img id="phone1" src="inbag/phone1.webp" alt="">
             <img id="card1" src="inbag/id1.webp" alt="">
-            <img id="handcream1" src="inbag/handcream1.webp" alt="scent">
+            <img id="handcream1" src="inbag/handcream1.webp" alt="handcream">
+            <img id="hairtie1" src="inbag/hairtie1.webp" alt="hair tie">
+            <img id="perfume1" src="inbag/perfume1.webp" alt="perfume">            
         </div>
 
 
@@ -310,6 +333,16 @@
         </div>
     </div>      
  </div>  
+
+    <div class="perfume-panel" id="perfumePnl">
+        <img src="inbag/perfume.webp" alt="perfume">
+        <div class="perfume-content">
+            <button class="perfumeClose">X</button>
+            <h2>Perfume</h2>
+            <p> Jo Maline: Raspberry Ripple <br> <br> Top note: redcurrant <br>Middle note: raspberry <br>Base note: white musk </p>
+        </div>
+    </div>      
+ </div>
 </section>
 
 <script>
@@ -379,6 +412,23 @@ handcream.addEventListener("click", function(){
 });
 handcreamClose.addEventListener("click", function(){
   handcreamPnl.classList.remove("show");
+});
+
+    const perfume=document.querySelector("#perfume");
+    const perfume1 =document.querySelector("#perfume1");
+    const perfumePnl=document.querySelector("#perfumePnl");
+    const perfumeClose=document.querySelector(".perfumeClose");
+perfume.addEventListener("mouseenter", function(){
+  perfume1.classList.add("show");
+});
+perfume.addEventListener("mouseleave", function(){
+  perfume1.classList.remove("show");
+});
+perfume.addEventListener("click", function(){
+    perfumePnl.classList.add("show");
+});
+perfumeClose.addEventListener("click", function(){
+  perfumePnl.classList.remove("show");
 });
 </script>
 
