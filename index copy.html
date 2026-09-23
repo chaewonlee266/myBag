@@ -117,10 +117,14 @@
         #perfume1.show{
             opacity: 1;
             display: block;
-        }         
+        }  
+        #archive1.show{
+            opacity: 1;
+            display: block;
+        }             
 
 
-        .airpods-panel, .phone-panel, .card-panel, .handcream-panel, .perfume-panel{
+        .airpods-panel, .phone-panel, .card-panel, .handcream-panel, .perfume-panel, .archive-panel{
             display: none;
  
             width: 80vw;
@@ -142,6 +146,21 @@
           grid-template-columns: 1fr 1fr;
         }
         .airpodsClose {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
+        }
+
+        .archive-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .archiveClose {
          position: absolute;
          top: 20px;
          right: 20px;
@@ -211,7 +230,7 @@
          z-index: 1001;
         }        
 
-        .airpods-panel img, .phone-panel img, .card-panel img, .handcream-panel img, .perfume-panel img{
+        .airpods-panel img, .phone-panel img, .card-panel img, .handcream-panel img, .perfume-panel img, .archive-panel img{
         grid-column: 1 / 2;
         width: 70%;
         justify-self: center;
@@ -219,7 +238,7 @@
         object-fit: contain;
 
         }
-        .airpods-content, .phone-content, .card-content, .handcream-content, .perfume-content{
+        .airpods-content, .phone-content, .card-content, .handcream-content, .perfume-content, .archive-content{
         grid-column: 2 / 3;
         align-self: left; /* 텍스트를 세로 중앙으로 */
         padding: 10px;
@@ -281,7 +300,7 @@
  <div class="alignment"> 
         <div class="grid" id="baseGrid">
             <img id="airpods" src="inbag/airpods.webp" alt="music">
-            <img id="cap" src="inbag/cap.webp" alt="cap">
+            <img id="archive" src="inbag/archive.webp" alt="archive">
             <img id="bracelet" src="inbag/bracelet.webp" alt="braacelet">
             <img id="hairclaw" src="inbag/hairclaw.webp" alt="">
             <img id="phone" src="inbag/phone.webp" alt="">
@@ -293,7 +312,7 @@
 
         <div class="gridY" id="overlayGrid">
             <img id="airpods1" src="inbag/airpods1.webp" alt="music">
-            <img id="cap1" src="inbag/cap1.webp" alt="cap">
+            <img id="archive1" src="inbag/archive1.webp" alt="portfolio">
             <img id="bracelet1" src="inbag/bracelet1.webp" alt="bracelet">
             <img id="hairclaw1" src="inbag/hairclaw1.webp" alt="">
             <img id="phone1" src="inbag/phone1.webp" alt="">
@@ -314,6 +333,16 @@
         </div>
     </div>
 
+    <div class="archive-panel" id="archivePnl">
+        <img src="inbag/archive.webp" alt="portfolio">
+        <div class="archive-content">
+            <button class="archiveClose">X</button>
+            <h2>Portfolio</h2>
+            <p><a href="https://drive.google.com/drive/folders/1bP2lWqI-8QX1Xby3IzXpaMAeBxHbvMra?dmr=1&ec=wgc-drive-hero-goto">
+                Link to art works</a></p>
+        </div>
+    </div>
+
     <div class="phone-panel" id="phonePnl">
         <img src="inbag/phone.webp" alt="phone">
         <div class="phone-content">
@@ -321,7 +350,9 @@
             <h2>Contact</h2>
             <p>Email: clee37@risd.edu <br>Instagram: chaewon_266</p>
         </div>
-    </div>  
+    </div> 
+    
+
 
     <div class="card-panel" id="cardPnl">
         <img src="inbag/id.webp" alt="ID">
@@ -369,6 +400,23 @@ airpods.addEventListener("click", function(){
 });
 airpodsClose.addEventListener("click", function(){
   airpodsPnl.classList.remove("show");
+});
+
+    const archive =document.querySelector("#archive");
+    const archive1 =document.querySelector("#archive1");
+    const archivePnl=document.querySelector("#archivePnl");
+    const archiveClose=document.querySelector(".archiveClose");
+archive.addEventListener("mouseenter", function(){
+  archive1.classList.add("show");
+});
+archive.addEventListener("mouseleave", function(){
+  archive1.classList.remove("show");
+});
+archive.addEventListener("click", function(){
+    archivePnl.classList.add("show");
+});
+archiveClose.addEventListener("click", function(){
+  archivePnl.classList.remove("show");
 });
 
     const phone=document.querySelector("#phone");
