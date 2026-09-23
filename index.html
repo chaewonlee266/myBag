@@ -7,7 +7,7 @@
     <style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         *{
         margin: 0;
@@ -30,7 +30,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-        width: 90vw;
+        width: 70vw;
 
         pointer-events: none;
         }
@@ -51,11 +51,16 @@
             display: flex;
             background-color: #9bb5b9;
             z-index: 10;
+            width: 100%;
         }
         .alignment{
             position: relative;
-            width: 60vw;
-            margin: 5vw;            
+            width: 100%;
+            max-width: 1000px;
+            padding: 5vw auto; 
+            margin: 5vw ;
+            display: flex;
+            align-items: center;           
         }
 
         .gridY{
@@ -67,6 +72,8 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: clamp(2px, 5vw, 100px);
             pointer-events: none;
+
+                width: 100;
         }
         .gridY img{
             width: 100%;
@@ -81,6 +88,7 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: clamp(2px, 5vw, 100px);
 
+            width: 100;
         }
         .grid img{
             width: 100%;
@@ -105,32 +113,32 @@
         #handcream1.show{
             opacity: 1;
             display: block;
-        }         
+        }
+        #perfume1.show{
+            opacity: 1;
+            display: block;
+        }  
+        #archive1.show{
+            opacity: 1;
+            display: block;
+        }             
 
 
-        .airpods-panel{
+        .airpods-panel, .phone-panel, .card-panel, .handcream-panel, .perfume-panel, .archive-panel{
             display: none;
  
             width: 80vw;
             height: 80vh;
             background-color: #E5E3B9;
             align-items: center;
-            position: absolute;
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,.4);
 
             z-index: 100;
-        }
-        .airpods-panel img{
-            grid-column: 1 /2;
-            display: block;
-            width: 70%;            
-        }
-        .airpods-panel .airpods-content{
-            grid-column: 2/3;
-
         }
         .airpods-panel.show{
             opacity: 1;
@@ -147,29 +155,21 @@
          z-index: 1001;
         }
 
-        .phone-panel{
-            display: none;
-            width: 80vw;
-            height: 80vh;
-            background-color: #E5E3B9;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 10px;
+        .archive-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .archiveClose {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
+        }
 
-            z-index: 100;
-        }
-        .phone-panel img{
-            grid-column: 1 /2;
-            display: block;
-            width: 70%;            
-        }
-        .phone-panel .phone-content{
-            grid-column: 2/3;
-
-        }
         .phone-panel.show{
             opacity: 1;
             display: grid;
@@ -185,29 +185,6 @@
          z-index: 1001;
         }
         
-        .card-panel{
-            display: none;
-            width: 80vw;
-            height: 80vh;
-            background-color: #E5E3B9;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 10px;
-
-            z-index: 100;
-        }
-        .card-panel img{
-            grid-column: 1 /2;
-            display: block;
-            width: 70%;            
-        }
-        .card-panel .id-content{
-            grid-column: 2/3;
-
-        }
         .card-panel.show{
             opacity: 1;
             display: grid;
@@ -223,29 +200,6 @@
          z-index: 1001;
         }
 
-        .handcream-panel{
-            display: none;
-            width: 80vw;
-            height: 80vh;
-            background-color: #E5E3B9;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 10px;
-
-            z-index: 100;
-        }
-        .handcream-panel img{
-            grid-column: 1 /2;
-            display: block;
-            width: 70%;            
-        }
-        .handcream-panel .id-content{
-            grid-column: 2/3;
-
-        }
         .handcream-panel.show{
             opacity: 1;
             display: grid;
@@ -261,27 +215,73 @@
          z-index: 1001;
         }
 
-        .title{
+        .perfume-panel.show{
+            opacity: 1;
+            display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .perfumeClose {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         background: none;
+         border: none;
+         color: #56878F;
+         z-index: 1001;
+        }        
+
+        .airpods-panel img, .phone-panel img, .card-panel img, .handcream-panel img, .perfume-panel img, .archive-panel img{
+        grid-column: 1 / 2;
+        width: 70%;
+        justify-self: center;
+        align-self: center; 
+        object-fit: contain;
+
+        }
+        .airpods-content, .phone-content, .card-content, .handcream-content, .perfume-content, .archive-content{
+        grid-column: 2 / 3;
+        align-self: left; /* 텍스트를 세로 중앙으로 */
+        padding: 10px;
+        }
+
+        .arrow{
             z-index: 2;
-            top: 50%;
+            top: 85%;
             left: 50%;
             transform: translate(-50%, -50%);
-            max-width: 70vw;
+            max-width: 7vw;
             display: flex;
             align-items: center;
             position: absolute;
-            font-size: clamp(2rem, 8vw, 10rem);
             pointer-events: none;
         }
 
         h2{
-   font-family: "Open Sans", sans-serif;
+  font-family: "Petrona", serif;
   font-optical-sizing: auto;
-  font-weight: <medium>;
+  font-weight: <600>;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100; 
-    color:#56878F;          
+            color:#56878F;
+            font-size: clamp(2rem, 4vw, 10rem);                
+        }
+        p{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <400>;
+  font-style: normal;  
+            font-size: clamp(1rem, 2vw, 10rem);
+            line-height: 1.7;  
+            margin-top: clamp(1rem, 3vw, 10rem);                 
+        }
+        button{
+            font-size: clamp(2rem, 3vw, 10rem);
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <400>;
+  font-style: normal; 
+        }
+        a{
+            color: black;
         }
 
     </style>
@@ -289,8 +289,8 @@
 <body>
 
  <div id="cover">
-    <img src="bag.webp" alt="myBag">
-    <p class="title">What's in <br> my bag?</p>
+    <img src="myBag.webp" alt="myBag">
+    <p class="arrow"><img src="arrow.webp" alt=""></p>
  </div>
 
  <section class="spacer"></section>
@@ -300,22 +300,26 @@
  <div class="alignment"> 
         <div class="grid" id="baseGrid">
             <img id="airpods" src="inbag/airpods.webp" alt="music">
-            <img id="cap" src="inbag/cap.webp" alt="cap">
+            <img id="archive" src="inbag/archive.webp" alt="archive">
             <img id="bracelet" src="inbag/bracelet.webp" alt="braacelet">
             <img id="hairclaw" src="inbag/hairclaw.webp" alt="">
             <img id="phone" src="inbag/phone.webp" alt="">
             <img id="card" src="inbag/id.webp" alt="">
-            <img id="handcream" src="inbag/handcream.webp" alt="scent">
+            <img id="handcream" src="inbag/handcream.webp" alt="hanf cream">
+            <img id="hairtie" src="inbag/hairtie.webp" alt="">
+            <img id="perfume" src="inbag/perfume.webp" alt="perfume">
         </div>
 
         <div class="gridY" id="overlayGrid">
             <img id="airpods1" src="inbag/airpods1.webp" alt="music">
-            <img id="cap1" src="inbag/cap1.webp" alt="cap">
+            <img id="archive1" src="inbag/archive1.webp" alt="portfolio">
             <img id="bracelet1" src="inbag/bracelet1.webp" alt="bracelet">
             <img id="hairclaw1" src="inbag/hairclaw1.webp" alt="">
             <img id="phone1" src="inbag/phone1.webp" alt="">
             <img id="card1" src="inbag/id1.webp" alt="">
-            <img id="handcream1" src="inbag/handcream1.webp" alt="scent">
+            <img id="handcream1" src="inbag/handcream1.webp" alt="handcream">
+            <img id="hairtie1" src="inbag/hairtie1.webp" alt="hair tie">
+            <img id="perfume1" src="inbag/perfume1.webp" alt="perfume">            
         </div>
 
 
@@ -324,7 +328,18 @@
         <div class="airpods-content">
             <button class="airpodsClose">X</button>
             <h2>Airpods</h2>
-            <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">Listen to my playlist</a></p>
+            <p><a href="https://open.spotify.com/playlist/5R957oWGEOXokXdYekcFWL?si=U-aA_IhMRAeirZr4qFDWfw&pi=mgbQPB_oSXiJg">
+                Listen to my playlist</a></p>
+        </div>
+    </div>
+
+    <div class="archive-panel" id="archivePnl">
+        <img src="inbag/archive.webp" alt="portfolio">
+        <div class="archive-content">
+            <button class="archiveClose">X</button>
+            <h2>Portfolio</h2>
+            <p><a href="https://drive.google.com/drive/folders/1bP2lWqI-8QX1Xby3IzXpaMAeBxHbvMra?dmr=1&ec=wgc-drive-hero-goto">
+                Link to art works</a></p>
         </div>
     </div>
 
@@ -333,16 +348,18 @@
         <div class="phone-content">
             <button class="phoneClose">X</button>
             <h2>Contact</h2>
-            <p>email: clee37@risd.edu <br>instagram: chaewon_266</p>
+            <p>Email: clee37@risd.edu <br>Instagram: chaewon_266</p>
         </div>
-    </div>  
+    </div> 
+    
+
 
     <div class="card-panel" id="cardPnl">
         <img src="inbag/id.webp" alt="ID">
         <div class="card-content">
             <button class="cardClose">X</button>
             <h2>About</h2>
-            <p>Chaewon Lee <br> RISD class of 29 <br>Born 2006 in Seoul, South Korea <br>Providence, Rhode Island and Palo Alto, California </p>
+            <p>Chaewon Lee <br> RISD class of 29 <br>Born 2006 in Seoul, South Korea <br>Providence, RI and Palo Alto, CA </p>
         </div>
     </div>     
 
@@ -351,10 +368,20 @@
         <div class="handcream-content">
             <button class="handcreamClose">X</button>
             <h2>Hand Cream</h2>
-            <p>Le Labo: Rose 31 <br> top: grass rose, cumin <br>middle: rose, cedar, vetiver <br>base: musk, oud, guaiac </p>
+            <p> LE LABO: Rose 31 <br> <br> Top note: grass rose, cumin <br>Middle note: rose, cedar, vetiver <br>Base note: musk, oud, guaiac </p>
         </div>
     </div>      
  </div>  
+
+    <div class="perfume-panel" id="perfumePnl">
+        <img src="inbag/perfume.webp" alt="perfume">
+        <div class="perfume-content">
+            <button class="perfumeClose">X</button>
+            <h2>Perfume</h2>
+            <p> Jo Maline: Raspberry Ripple <br> <br> Top note: redcurrant <br>Middle note: raspberry <br>Base note: white musk </p>
+        </div>
+    </div>      
+ </div>
 </section>
 
 <script>
@@ -373,6 +400,23 @@ airpods.addEventListener("click", function(){
 });
 airpodsClose.addEventListener("click", function(){
   airpodsPnl.classList.remove("show");
+});
+
+    const archive =document.querySelector("#archive");
+    const archive1 =document.querySelector("#archive1");
+    const archivePnl=document.querySelector("#archivePnl");
+    const archiveClose=document.querySelector(".archiveClose");
+archive.addEventListener("mouseenter", function(){
+  archive1.classList.add("show");
+});
+archive.addEventListener("mouseleave", function(){
+  archive1.classList.remove("show");
+});
+archive.addEventListener("click", function(){
+    archivePnl.classList.add("show");
+});
+archiveClose.addEventListener("click", function(){
+  archivePnl.classList.remove("show");
 });
 
     const phone=document.querySelector("#phone");
@@ -424,6 +468,23 @@ handcream.addEventListener("click", function(){
 });
 handcreamClose.addEventListener("click", function(){
   handcreamPnl.classList.remove("show");
+});
+
+    const perfume=document.querySelector("#perfume");
+    const perfume1 =document.querySelector("#perfume1");
+    const perfumePnl=document.querySelector("#perfumePnl");
+    const perfumeClose=document.querySelector(".perfumeClose");
+perfume.addEventListener("mouseenter", function(){
+  perfume1.classList.add("show");
+});
+perfume.addEventListener("mouseleave", function(){
+  perfume1.classList.remove("show");
+});
+perfume.addEventListener("click", function(){
+    perfumePnl.classList.add("show");
+});
+perfumeClose.addEventListener("click", function(){
+  perfumePnl.classList.remove("show");
 });
 </script>
 
